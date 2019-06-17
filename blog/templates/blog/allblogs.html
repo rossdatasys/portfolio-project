@@ -26,7 +26,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="http://twitter.com/nickchuckwalter">Twitter</a>
-          <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% static 'Resume.jpg' %}">Resume</a>
           <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
@@ -42,7 +42,7 @@
  		  <hr />
 
       {% for blog in blogs.all %}
-        <a href=""><h3>{{ blog.title }}</h3></a>
+        <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
         <br />
         {{ blog.pub_date_pretty }}
         <br />
